@@ -1,0 +1,22 @@
+# rule identifiers to exclude from running
+disabled_rules:
+  - trailing_whitespace
+  - todo
+
+# some rules are only opt-in
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+
+# paths to include during linting. `--path` is ignored if present.
+#included:
+#  - DMSpaceX
+
+# paths to ignore during linting. Takes precedence over `included`.
+excluded:
+  - Carthage
+  - Pods
+
+line_length:
+  warning: 300
+  error: 400

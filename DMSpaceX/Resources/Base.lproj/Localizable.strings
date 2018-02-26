@@ -1,0 +1,10 @@
+
+// FIXME: This is an example strings file. Adapt to your needs
+
+// MARK: Home
+
+"home.title" = "Home";
+
+// MARK: Errors
+
+"ws.error.title" = "Erreur réseau";

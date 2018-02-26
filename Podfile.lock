@@ -1,0 +1,41 @@
+PODS:
+  - Crashlytics (3.10.0):
+    - Fabric (~> 1.7.3)
+  - Fabric (1.7.3)
+  - OHHTTPStubs (6.1.0):
+    - OHHTTPStubs/Default (= 6.1.0)
+  - OHHTTPStubs/Core (6.1.0)
+  - OHHTTPStubs/Default (6.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (6.1.0)
+  - Reusable (4.0.0):
+    - Reusable/Storyboard (= 4.0.0)
+    - Reusable/View (= 4.0.0)
+  - Reusable/Storyboard (4.0.0)
+  - Reusable/View (4.0.0)
+  - SwiftyUserDefaults (3.0.1)
+
+DEPENDENCIES:
+  - Crashlytics
+  - Fabric
+  - OHHTTPStubs
+  - Reusable
+  - SwiftyUserDefaults
+
+SPEC CHECKSUMS:
+  Crashlytics: a989ef242b66605577a425733797f810bd2725eb
+  Fabric: bb495bb9a7a7677c6d03a1f8b83d95bc49b47e41
+  OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
+  Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
+  SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
+
+PODFILE CHECKSUM: 2eb98c0ed59bea2605e4d2dd407f921c68fe3dd1
+
+COCOAPODS: 1.4.0
