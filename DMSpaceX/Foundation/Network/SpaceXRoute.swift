@@ -1,16 +1,12 @@
 //
-//  Path.swift
+//  SpaceXRoute.swift
 //  DMSpaceX
 //
-//  Created by Kien NGUYEN on 01/03/2018.
+//  Created by Kyen on 02/03/2018.
 //  Copyright © 2018 kien.ng@icloud.com. All rights reserved.
 //
 
-public protocol Routable {
-  var path: String { get }
-}
-
-public enum Path: Routable {
+public enum SpaceXRoute: APIRoute {
   case launches, companyInfo, rocketInfo(name: String)
   
   public var path: String {
@@ -23,5 +19,4 @@ public enum Path: Routable {
       return "rockets/\(name)"
     }
   }
-  
 }

@@ -21,7 +21,7 @@ end
 
 target :UnitTests do
   common_pods
-  pod 'OHHTTPStubs'
+  pod 'OHHTTPStubs/Swift'
 end
 
 post_install do |installer|

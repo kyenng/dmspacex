@@ -2,8 +2,6 @@ PODS:
   - Crashlytics (3.10.1):
     - Fabric (~> 1.7.5)
   - Fabric (1.7.5)
-  - OHHTTPStubs (6.1.0):
-    - OHHTTPStubs/Default (= 6.1.0)
   - OHHTTPStubs/Core (6.1.0)
   - OHHTTPStubs/Default (6.1.0):
     - OHHTTPStubs/Core
@@ -15,6 +13,8 @@ PODS:
   - OHHTTPStubs/NSURLSession (6.1.0):
     - OHHTTPStubs/Core
   - OHHTTPStubs/OHPathHelpers (6.1.0)
+  - OHHTTPStubs/Swift (6.1.0):
+    - OHHTTPStubs/Default
   - Reusable (4.0.0):
     - Reusable/Storyboard (= 4.0.0)
     - Reusable/View (= 4.0.0)
@@ -26,7 +26,7 @@ PODS:
 DEPENDENCIES:
   - Crashlytics
   - Fabric
-  - OHHTTPStubs
+  - OHHTTPStubs/Swift
   - Reusable
   - RxSwift
   - SwiftyUserDefaults
@@ -39,6 +39,6 @@ SPEC CHECKSUMS:
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: ec8788bd31746cb9ac16ece8caf7c711fdd31750
+PODFILE CHECKSUM: e73762bef176f52d516bb8585062a15df7069f78
 
 COCOAPODS: 1.4.0

@@ -8,22 +8,20 @@
 
 import RxSwift
 
-public final class LaunchesService: Service {
-  
+final class LaunchesService: APIService {
   public let apiClient: APIClient
   
   init(apiClient: APIClient) {
     self.apiClient = apiClient
   }
   
-  func fetchLaunches() -> Single<Void> {
-
-    return Single.error(DMSpaceXError.shouldNotNil)
+  func fetchLaunches() -> Single<[Launch]> {
+    return apiClient.send(apiRequest: LaunchesRequest())
   }
 }
 
 struct LaunchesRequest: APIRequest {
   let method = RequestType.GET
-  let path = Path.launches.path
+  let path = SpaceXRoute.launches.path
   let parameters = [String: String]()
 }

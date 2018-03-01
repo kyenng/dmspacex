@@ -1,5 +1,5 @@
 //
-//  Configuration.swift
+//  Service.swift
 //  DMSpaceX
 //
 //  Created by Kyen on 01/03/2018.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-public protocol Configuration {
-  static var baseURL: String { get }
-  static var apiVersion: String { get }
+public protocol APIService {
+  var apiClient: APIClient { get }
 }
