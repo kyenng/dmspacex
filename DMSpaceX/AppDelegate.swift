@@ -3,7 +3,7 @@
 //  DMSpaceX
 //
 //  Created by Kien NGUYEN on 26/2/18
-//  Copyright (c) 2018 kien.ng. All rights reserved.
+//  Copyright (c) 2018 kien.ng@icloud.com. All rights reserved.
 //
 
 import UIKit
