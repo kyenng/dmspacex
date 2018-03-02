@@ -27,6 +27,8 @@
 		9FC3570A2048AC6000619092 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC357092048AC6000619092 /* APIRequest.swift */; };
 		9FC3570E2048BE0B00619092 /* SpaceXClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3570D2048BE0B00619092 /* SpaceXClient.swift */; };
 		9FC357102048BE7200619092 /* SpaceXRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3570F2048BE7200619092 /* SpaceXRoute.swift */; };
+		9FD6B2BC2049E3DF0075DDE3 /* DateFormatter+SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6B2BB2049E3DF0075DDE3 /* DateFormatter+SpaceX.swift */; };
+		9FD6B2C02049E6AB0075DDE3 /* DateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6B2BF2049E6AB0075DDE3 /* DateFormatterTest.swift */; };
 		A3B0E7F5A519E9270902FA70 /* Localizable.strings in Sources */ = {isa = PBXBuildFile; fileRef = 086745A8E173ACF359E1850B /* Localizable.strings */; };
 		B106AE0B64AE5313D1EDC04C /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E4FE3E051201C4DB075B /* Storyboards.swift */; };
 		CB6C304CEEEE45D0A084354A /* Pods_DMSpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830384A0F42309A718A5BC8B /* Pods_DMSpaceX.framework */; };
@@ -80,6 +82,8 @@
 		9FC357092048AC6000619092 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		9FC3570D2048BE0B00619092 /* SpaceXClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceXClient.swift; sourceTree = "<group>"; };
 		9FC3570F2048BE7200619092 /* SpaceXRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXRoute.swift; sourceTree = "<group>"; };
+		9FD6B2BB2049E3DF0075DDE3 /* DateFormatter+SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+SpaceX.swift"; sourceTree = "<group>"; };
+		9FD6B2BF2049E6AB0075DDE3 /* DateFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTest.swift; sourceTree = "<group>"; };
 		A5F2E4FE3E051201C4DB075B /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 1; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Storyboards.swift; sourceTree = "<group>"; };
 		AE5A7413963DE36537D8F762 /* AppTransportSecurity.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = AppTransportSecurity.plist; sourceTree = "<group>"; };
 		AFAEC2A6F2D42F17A6182D43 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 1; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				DF9845ABA38A9052D19083DE /* LaunchesServiceTests.swift */,
+				9FD6B2BF2049E6AB0075DDE3 /* DateFormatterTest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 			children = (
 				9F1787122047F0D400A2C7A0 /* Network */,
 				9F17870A2047784000A2C7A0 /* AppError.swift */,
+				9FD6B2BB2049E3DF0075DDE3 /* DateFormatter+SpaceX.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -642,6 +648,7 @@
 			files = (
 				36A88622A8A00F495BB90160 /* LaunchesServiceTests.swift in Sources */,
 				9F7F0F0F204887AA00FFF9BF /* MockConfiguration.swift in Sources */,
+				9FD6B2C02049E6AB0075DDE3 /* DateFormatterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +663,7 @@
 				E523308BDE339328344C9366 /* AppTransportSecurity.plist in Sources */,
 				F7EE4E1627048A8A72C06F79 /* AppDelegate.swift in Sources */,
 				9FC3570A2048AC6000619092 /* APIRequest.swift in Sources */,
+				9FD6B2BC2049E3DF0075DDE3 /* DateFormatter+SpaceX.swift in Sources */,
 				9F1787152047F13800A2C7A0 /* APIConfiguration.swift in Sources */,
 				B106AE0B64AE5313D1EDC04C /* Storyboards.swift in Sources */,
 				9F7F0F112048899F00FFF9BF /* Launch.swift in Sources */,
