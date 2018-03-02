@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RealmSwift
 
 final class LaunchesService: APIService {
   public let apiClient: APIClient
@@ -15,8 +16,18 @@ final class LaunchesService: APIService {
     self.apiClient = apiClient
   }
   
-  func fetchLaunches() -> Single<[Launch]> {
+  func fetchLaunches(shouldSave: Bool = false) -> Single<[Launch]> {
+    guard shouldSave else {
+      // not save
+      return apiClient.send(apiRequest: LaunchesRequest())
+    }
     return apiClient.send(apiRequest: LaunchesRequest())
+      .do(onSuccess: { launches in
+        let realm = try! Realm()
+        try! realm.write {
+          realm.add(launches, update: true)
+        }
+      })
   }
 }
 

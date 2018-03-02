@@ -6,26 +6,33 @@
 //  Copyright © 2018 kien.ng@icloud.com. All rights reserved.
 //
 
-struct Launch: Decodable {
-  let flightNumber: Int
-  let launchYear: String
-  let launchDateUtc: String
-  let launchDateLocal: String
-  let rocket: Rocket
+import RealmSwift
+import Realm
+
+class Launch: Object, Decodable {
+  @objc dynamic var flightNumber: Int = Int.max
+  @objc dynamic var launchYear: String = ""
+  @objc dynamic var rocket: Rocket!
+  
+  override public static func primaryKey() -> String? {
+    return "flightNumber"
+  }
   
   enum CodingKeys: String, CodingKey {
     case flightNumber = "flight_number"
     case launchYear = "launch_year"
-    case launchDateUtc = "launch_date_utc"
-    case launchDateLocal = "launch_date_local"
     case rocket
   }
 }
 
-struct Rocket: Decodable {
-  let rocketId: String
-  let rocketName: String
-  let rocketType: String
+class Rocket: Object, Decodable {
+  @objc dynamic var rocketId: String = ""
+  @objc dynamic var rocketName: String = ""
+  @objc dynamic var rocketType: String = ""
+  
+  override public static func primaryKey() -> String? {
+    return "rocketId"
+  }
   
   enum CodingKeys: String, CodingKey {
     case rocketId = "rocket_id"

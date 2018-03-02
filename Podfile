@@ -4,17 +4,13 @@ platform :ios, '9.0'
 use_frameworks!
 
 def common_pods
-#  pod 'Alamofire'
   pod 'RxSwift'
-#  pod 'RealmSwift'
-#  pod 'ObjectMapper'
-#  pod 'KeychainSwift'
+  pod 'RealmSwift'
 end
 
 target 'DMSpaceX' do
   common_pods
   pod 'Reusable'
-  pod 'SwiftyUserDefaults'
   pod 'Fabric'
   pod 'Crashlytics'
 end
