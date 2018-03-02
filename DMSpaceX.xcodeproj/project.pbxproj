@@ -29,6 +29,9 @@
 		9FC357102048BE7200619092 /* SpaceXRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3570F2048BE7200619092 /* SpaceXRoute.swift */; };
 		9FD6B2BC2049E3DF0075DDE3 /* DateFormatter+SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6B2BB2049E3DF0075DDE3 /* DateFormatter+SpaceX.swift */; };
 		9FD6B2C02049E6AB0075DDE3 /* DateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6B2BF2049E6AB0075DDE3 /* DateFormatterTest.swift */; };
+		9FD6B2C22049EC3B0075DDE3 /* LauchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6B2C12049EC3B0075DDE3 /* LauchesViewController.swift */; };
+		9FD6B2C42049F5880075DDE3 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6B2C32049F5880075DDE3 /* LaunchViewModel.swift */; };
+		9FD6B2C62049F7600075DDE3 /* LauchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6B2C52049F7600075DDE3 /* LauchCell.swift */; };
 		A3B0E7F5A519E9270902FA70 /* Localizable.strings in Sources */ = {isa = PBXBuildFile; fileRef = 086745A8E173ACF359E1850B /* Localizable.strings */; };
 		B106AE0B64AE5313D1EDC04C /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E4FE3E051201C4DB075B /* Storyboards.swift */; };
 		CB6C304CEEEE45D0A084354A /* Pods_DMSpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830384A0F42309A718A5BC8B /* Pods_DMSpaceX.framework */; };
@@ -84,6 +87,9 @@
 		9FC3570F2048BE7200619092 /* SpaceXRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXRoute.swift; sourceTree = "<group>"; };
 		9FD6B2BB2049E3DF0075DDE3 /* DateFormatter+SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+SpaceX.swift"; sourceTree = "<group>"; };
 		9FD6B2BF2049E6AB0075DDE3 /* DateFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTest.swift; sourceTree = "<group>"; };
+		9FD6B2C12049EC3B0075DDE3 /* LauchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchesViewController.swift; sourceTree = "<group>"; };
+		9FD6B2C32049F5880075DDE3 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		9FD6B2C52049F7600075DDE3 /* LauchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchCell.swift; sourceTree = "<group>"; };
 		A5F2E4FE3E051201C4DB075B /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 1; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Storyboards.swift; sourceTree = "<group>"; };
 		AE5A7413963DE36537D8F762 /* AppTransportSecurity.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = AppTransportSecurity.plist; sourceTree = "<group>"; };
 		AFAEC2A6F2D42F17A6182D43 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 1; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +196,7 @@
 		49697DEDAD9AB77DAD5016EA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9FD6B2C32049F5880075DDE3 /* LaunchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -310,6 +317,9 @@
 		E49C8D4A1BA6BE53B556C385 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				15EF86E729C03AE4530C3885 /* Main.storyboard */,
+				9FD6B2C12049EC3B0075DDE3 /* LauchesViewController.swift */,
+				9FD6B2C52049F7600075DDE3 /* LauchCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,7 +338,6 @@
 				9F1787112047F0AD00A2C7A0 /* Foundation */,
 				9F1787132047F0F800A2C7A0 /* Services */,
 				AFAEC2A6F2D42F17A6182D43 /* AppDelegate.swift */,
-				15EF86E729C03AE4530C3885 /* Main.storyboard */,
 				96259F4F247CAA89D70065BE /* Swiftgen */,
 				E7FAEDE8D842ADB75A1CCD31 /* Models */,
 				49697DEDAD9AB77DAD5016EA /* ViewModels */,
@@ -663,8 +672,10 @@
 				E523308BDE339328344C9366 /* AppTransportSecurity.plist in Sources */,
 				F7EE4E1627048A8A72C06F79 /* AppDelegate.swift in Sources */,
 				9FC3570A2048AC6000619092 /* APIRequest.swift in Sources */,
+				9FD6B2C62049F7600075DDE3 /* LauchCell.swift in Sources */,
 				9FD6B2BC2049E3DF0075DDE3 /* DateFormatter+SpaceX.swift in Sources */,
 				9F1787152047F13800A2C7A0 /* APIConfiguration.swift in Sources */,
+				9FD6B2C42049F5880075DDE3 /* LaunchViewModel.swift in Sources */,
 				B106AE0B64AE5313D1EDC04C /* Storyboards.swift in Sources */,
 				9F7F0F112048899F00FFF9BF /* Launch.swift in Sources */,
 				9F17870B2047784000A2C7A0 /* AppError.swift in Sources */,
@@ -672,6 +683,7 @@
 				54CCAD7A5AA0DABDD82408B6 /* Images.swift in Sources */,
 				876ACD4F7DFFA2A12062CCB0 /* Strings.swift in Sources */,
 				1B0F6D746E5BACE712FA7314 /* Colors.swift in Sources */,
+				9FD6B2C22049EC3B0075DDE3 /* LauchesViewController.swift in Sources */,
 				9FC357102048BE7200619092 /* SpaceXRoute.swift in Sources */,
 				9F1787082047745200A2C7A0 /* LaunchesService.swift in Sources */,
 				9FC3570E2048BE0B00619092 /* SpaceXClient.swift in Sources */,

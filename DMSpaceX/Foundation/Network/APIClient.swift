@@ -23,10 +23,8 @@ public extension APIClient {
       let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
         do {
           let model: T = try JSONDecoder().decode(T.self, from: data ?? Data())
-          print("== Success to request: \(request.url?.absoluteString ?? "no url") ==\nData:\n\(model)")
           single(.success(model))
         } catch let error {
-          print("== Error to request: \(request.url?.absoluteString ?? "no url") ==\nError: \(error)")
           single(.error(error))
         }
       }

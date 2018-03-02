@@ -52,6 +52,8 @@ extension UIViewController {
 enum StoryboardScene {
   enum Main: StoryboardType {
     static let storyboardName = "Main"
+
+    static let initialScene = InitialSceneType<DMSpaceX.LauchesViewController>(storyboard: Main.self)
   }
 }
 
