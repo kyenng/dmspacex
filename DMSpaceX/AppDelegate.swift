@@ -3,7 +3,7 @@
 //  DMSpaceX
 //
 //  Created by Kien NGUYEN on 26/2/18
-//  Copyright (c) 2018 kien.ng. All rights reserved.
+//  Copyright (c) 2018 kien.ng@icloud.com. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import Fabric
 import Crashlytics
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 

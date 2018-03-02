@@ -2,17 +2,17 @@
 
 ## Contexte
 
-| Libellé | Description |
-| --- | --- |
-| Chef de Projet | 📝A REMPLIR📝 |
-| Client | 📝kien.ng📝 |
-| Date de démarrage | 26/02/2018 |
-| Plateformes | 📝iOS? Android?📝 |
-| Devices | 📝iPhone? iPad?📝 |
+| Libellé           | Description |
+| ----------------- | ----------- |
+| Chef de Projet    | Kien NGUYEN |
+| Client            | Dailymotion |
+| Date de démarrage | 26/02/2018  |
+| Plateformes       | iOS         |
+| Devices           | iPhone/iPad |
 
 ## Description
 
-📝 A REMPLIR 📝
+Projet cas pratique pour l'entretien chez Dailymotion
 
 ---
 
