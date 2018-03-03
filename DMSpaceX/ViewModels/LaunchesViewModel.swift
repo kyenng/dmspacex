@@ -2,7 +2,7 @@
 //  LaunchesViewModel.swift
 //  DMSpaceX
 //
-//  Created by Kyen on 03/03/2018.
+//  Created by Kyen NG on 03/03/2018.
 //  Copyright © 2018 kien.ng@icloud.com. All rights reserved.
 //
 
@@ -20,13 +20,11 @@ final class LaunchesViewModel {
   
   func updateData(completion: (() -> Void)?) {
     service.fetchLaunches(shouldSave: true)
-      .debug("fetchLaunches")
       .subscribe()
       .disposed(by: disposeBag)
     
     service.getLaunches()
       .observeOn(MainScheduler.instance)
-      .debug("getLaunches")
       .subscribe(onNext: { [weak self] launches in
         self?.updateData(with: launches)
         completion?()
@@ -42,12 +40,8 @@ final class LaunchesViewModel {
 
   private func updateData(with launches: Results<Launch>) {
     dataSource = launches.map { launch in
-      let cellVM = LaunchViewModel(model: launch)
-      // bind isDetailDisplay to all cell view models
-      isDetailDisplay.bind(to: cellVM.isDetailDisplay).disposed(by: disposeBag)
+      let cellVM = LaunchViewModel(model: launch, isDetailDisplay: isDetailDisplay)
       return cellVM
     }
   }
-  
-  
 }

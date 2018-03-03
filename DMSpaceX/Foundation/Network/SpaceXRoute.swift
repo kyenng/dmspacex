@@ -2,7 +2,7 @@
 //  SpaceXRoute.swift
 //  DMSpaceX
 //
-//  Created by Kien NGUYEN on 02/03/2018.
+//  Created by Kyen NG on 02/03/2018.
 //  Copyright © 2018 kien.ng@icloud.com. All rights reserved.
 //
 

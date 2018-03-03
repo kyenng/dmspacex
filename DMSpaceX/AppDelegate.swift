@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DMSpaceX
 //
-//  Created by Kien NGUYEN on 26/2/18
+//  Created by Kyen NG on 26/2/18
 //  Copyright (c) 2018 kien.ng@icloud.com. All rights reserved.
 //
 
@@ -21,10 +21,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     Fabric.with([Crashlytics.self()])
     
+    // Setup Realm migration
     let config = Realm.Configuration (
       // Set the new schema version. This must be greater than the previously used
       // version (if you've never set a schema version before, the version is 0).
-      schemaVersion: 6,
+      schemaVersion: 7,
       
       // Set the block which will be called automatically when opening a Realm with
       // a schema version lower than the one set above
@@ -42,7 +43,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Now that we've told Realm how to handle the schema change, opening the file
     // will automatically perform the migration
-    let realm = try! Realm()
+    _ = try! Realm()
     
     return true
   }

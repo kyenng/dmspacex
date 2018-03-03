@@ -2,7 +2,7 @@
 //  Launches.swift
 //  DMSpaceX
 //
-//  Created by Kien NGUYEN on 01/03/2018.
+//  Created by Kyen NG on 01/03/2018.
 //  Copyright © 2018 kien.ng@icloud.com. All rights reserved.
 //
 
@@ -15,6 +15,7 @@ class Launch: Object, Decodable {
   @objc dynamic var launchDate: Date!
   @objc dynamic var rocket: Rocket!
   @objc dynamic var details: String?
+  @objc dynamic var links: Links?
   
   override public static func primaryKey() -> String? {
     return "flightNumber"
@@ -24,7 +25,7 @@ class Launch: Object, Decodable {
     case flightNumber = "flight_number"
     case launchYear = "launch_year"
     case launchDate = "launch_date_utc"
-    case rocket, details
+    case rocket, details, links
   }
   
   required convenience init(from decoder: Decoder) throws {
@@ -36,6 +37,7 @@ class Launch: Object, Decodable {
     launchDate = DateFormatter(dateFormat: DateFormatter.utcDateFormat).date(from: date)
     rocket = try container.decode(Rocket.self, forKey: .rocket)
     details = try container.decode(String?.self, forKey: .details)
+    links = try container.decode(Links?.self, forKey: .links)
   }
   
   required init(realm: RLMRealm, schema: RLMObjectSchema) {
@@ -64,5 +66,17 @@ class Rocket: Object, Decodable {
     case rocketId = "rocket_id"
     case rocketName = "rocket_name"
     case rocketType = "rocket_type"
+  }
+}
+
+class Links: Object, Decodable {
+  @objc dynamic var videoLink: String = ""
+  
+  override public static func primaryKey() -> String? {
+    return "videoLink"
+  }
+  
+  enum CodingKeys: String, CodingKey {
+    case videoLink = "video_link"
   }
 }

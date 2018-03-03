@@ -2,7 +2,7 @@
 //  LaunchesServiceTest.swift
 //  DMSpaceX
 //
-//  Created by Kien NGUYEN on 26/2/18
+//  Created by Kyen NG on 26/2/18
 //  Copyright (c) 2018 kien.ng@icloud.com. All rights reserved.
 //
 

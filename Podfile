@@ -8,6 +8,7 @@ def common_pods
   pod 'RealmSwift'
   pod 'BouncyLayout'
   pod 'AnimatedCollectionViewLayout'
+  pod 'YouTubePlayer'
 end
 
 target 'DMSpaceX' do

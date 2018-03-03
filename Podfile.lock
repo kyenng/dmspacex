@@ -30,6 +30,7 @@ PODS:
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
+  - YouTubePlayer (0.4.0)
 
 DEPENDENCIES:
   - AnimatedCollectionViewLayout
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - Reusable
   - RxCocoa
   - RxSwift
+  - YouTubePlayer
 
 SPEC CHECKSUMS:
   AnimatedCollectionViewLayout: 504b992a4258eb39d2dd2b2b48e84b4b95860fd7
@@ -53,7 +55,8 @@ SPEC CHECKSUMS:
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
+  YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: badbd7432e1378c8240d2541cb966c1930431939
+PODFILE CHECKSUM: f178ff1b2896cb81a7d9872a9170f614d8ed40b8
 
 COCOAPODS: 1.4.0

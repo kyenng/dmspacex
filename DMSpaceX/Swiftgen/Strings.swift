@@ -7,10 +7,8 @@ import Foundation
 
 // swiftlint:disable identifier_name line_length type_body_length
 enum L10n {
-  /// Home
-  static let homeTitle = L10n.tr("Localizable", "home.title")
-  /// Erreur réseau
-  static let wsErrorTitle = L10n.tr("Localizable", "ws.error.title")
+  /// No description
+  static let launchesNoDescription = L10n.tr("Localizable", "launches.no.description")
 }
 // swiftlint:enable identifier_name line_length type_body_length
 
