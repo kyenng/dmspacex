@@ -2,13 +2,13 @@
 //  ListViewController.swift
 //  DMSpaceX
 //
-//  Created by Kyen on 02/03/2018.
+//  Created by Kien NGUYEN on 02/03/2018.
 //  Copyright © 2018 kien.ng@icloud.com. All rights reserved.
 //
 
 import UIKit
-import RxSwift
-import RealmSwift
+import BouncyLayout
+import AnimatedCollectionViewLayout
 
 class LauchesViewController: UIViewController {
   
@@ -17,46 +17,74 @@ class LauchesViewController: UIViewController {
   @IBOutlet fileprivate weak var collectionView: UICollectionView!
   
   // MARK: Private
-  private let disposeBag = DisposeBag()
-  private let service = LaunchesService(apiClient: SpaceXClient(configuration: Environment()))
-  fileprivate var dataSource: [LaunchViewModel]?
+
+  fileprivate var viewModel = LaunchesViewModel()
+  fileprivate var bounceLayout: BouncyLayout!
+  fileprivate var animatedCollectionViewLayout: AnimatedCollectionViewLayout!
+  
+  fileprivate var cellSizeDetail: CGSize!
+  fileprivate var cellSizeList: CGSize!
   
   // MARK: - Function
   
   // MARK: UIViewController life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    service.fetchLaunches(shouldSave: true)
-      .debug("fetchLaunches")
-      .subscribe()
-      .disposed(by: disposeBag)
     
-    service.getLaunches()
-      .observeOn(MainScheduler.instance)
-      .debug("getLaunches")
-      .subscribe(onNext: { [weak self] launches in
-        self?.updateData(with: launches)
-      })
-      .disposed(by: disposeBag)
+    cellSizeDetail = view.frame.size
+    cellSizeList = CGSize(width: (view.frame.size.width/2).rounded(.towardZero) - 5, height: 140)
+    
+    bounceLayout = BouncyLayout(style: .prominent)
+    bounceLayout.scrollDirection = .vertical
+    bounceLayout.minimumLineSpacing = 10
+    bounceLayout.minimumInteritemSpacing = 10
+    
+    animatedCollectionViewLayout = AnimatedCollectionViewLayout()
+    animatedCollectionViewLayout.scrollDirection = .horizontal
+    animatedCollectionViewLayout.animator = PageAttributesAnimator()
+    animatedCollectionViewLayout.minimumLineSpacing = 0
+    animatedCollectionViewLayout.minimumInteritemSpacing = 0
+    
+    viewModel.updateData { [weak self] in
+      self?.collectionView.reloadData()
+    }
   }
   
-  // MARK: Private
-  private func updateData(with launches: Results<Launch>) {
-    dataSource = launches.map { LaunchViewModel(model: $0) }
+  override var prefersStatusBarHidden: Bool {
+    return true
+  }
+}
+
+extension LauchesViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let isDetailDisplay = viewModel.toggleDetailDisplay()
+    collectionView.isPagingEnabled = isDetailDisplay ? true : false
+    let collectionViewLayout = isDetailDisplay ? animatedCollectionViewLayout : bounceLayout
+    collectionView.setCollectionViewLayout(collectionViewLayout, animated: true)
     collectionView.reloadData()
   }
 }
 
-extension LauchesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension LauchesViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return dataSource?.count ?? 0
+    return viewModel.dataSource?.count ?? 0
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LaunchCell.reuseIdentifier, for: indexPath) as? LaunchCell
-    if let vm = dataSource?[indexPath.row] {
-      cell?.setup(viewModel: vm)
+    let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: LaunchBigCell.reuseIdentifier, for: indexPath)
+    if let cellVM = viewModel.dataSource?[indexPath.row],
+      let launchBigCell = cell as? LaunchBigCell {
+      cellVM.setup(cell: launchBigCell)
     }
-    return cell ?? UICollectionViewCell()
+    return cell
+  }
+}
+
+extension LauchesViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    if collectionViewLayout == animatedCollectionViewLayout {
+      return cellSizeDetail
+    }
+    return cellSizeList
   }
 }

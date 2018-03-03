@@ -1,4 +1,6 @@
 PODS:
+  - AnimatedCollectionViewLayout (0.3.0)
+  - BouncyLayout (2.0.0)
   - Crashlytics (3.10.1):
     - Fabric (~> 1.7.5)
   - Fabric (1.7.5)
@@ -25,25 +27,33 @@ PODS:
     - Reusable/View (= 4.0.0)
   - Reusable/Storyboard (4.0.0)
   - Reusable/View (4.0.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
 
 DEPENDENCIES:
+  - AnimatedCollectionViewLayout
+  - BouncyLayout
   - Crashlytics
   - Fabric
   - OHHTTPStubs/Swift
   - RealmSwift
   - Reusable
+  - RxCocoa
   - RxSwift
 
 SPEC CHECKSUMS:
+  AnimatedCollectionViewLayout: 504b992a4258eb39d2dd2b2b48e84b4b95860fd7
+  BouncyLayout: f64872d6b2a3e41bb8c89e24d0ff08e2dbeeb304
   Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
   Fabric: ae7146a5f505ea370a1e44820b4b1dc8890e2890
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
   RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: 2c5f075f070a69ff7d4a03dc41698a832ea89a59
+PODFILE CHECKSUM: badbd7432e1378c8240d2541cb966c1930431939
 
 COCOAPODS: 1.4.0

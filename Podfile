@@ -6,6 +6,8 @@ use_frameworks!
 def common_pods
   pod 'RxSwift'
   pod 'RealmSwift'
+  pod 'BouncyLayout'
+  pod 'AnimatedCollectionViewLayout'
 end
 
 target 'DMSpaceX' do
@@ -13,6 +15,7 @@ target 'DMSpaceX' do
   pod 'Reusable'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'RxCocoa'
 end
 
 target :UnitTests do

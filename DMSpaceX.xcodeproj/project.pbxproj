@@ -24,6 +24,7 @@
 		9F7F0F0D2048870700FFF9BF /* launches.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F7F0F0C2048870700FFF9BF /* launches.json */; };
 		9F7F0F0F204887AA00FFF9BF /* MockConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F0F0E204887AA00FFF9BF /* MockConfiguration.swift */; };
 		9F7F0F112048899F00FFF9BF /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F0F102048899F00FFF9BF /* Launch.swift */; };
+		9F8C7CDB204B238600386D10 /* LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C7CDA204B238600386D10 /* LaunchesViewModel.swift */; };
 		9FC3570A2048AC6000619092 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC357092048AC6000619092 /* APIRequest.swift */; };
 		9FC3570E2048BE0B00619092 /* SpaceXClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3570D2048BE0B00619092 /* SpaceXClient.swift */; };
 		9FC357102048BE7200619092 /* SpaceXRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3570F2048BE7200619092 /* SpaceXRoute.swift */; };
@@ -31,7 +32,7 @@
 		9FD6B2C02049E6AB0075DDE3 /* DateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6B2BF2049E6AB0075DDE3 /* DateFormatterTest.swift */; };
 		9FD6B2C22049EC3B0075DDE3 /* LauchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6B2C12049EC3B0075DDE3 /* LauchesViewController.swift */; };
 		9FD6B2C42049F5880075DDE3 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6B2C32049F5880075DDE3 /* LaunchViewModel.swift */; };
-		9FD6B2C62049F7600075DDE3 /* LauchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6B2C52049F7600075DDE3 /* LauchCell.swift */; };
+		9FD6B2C62049F7600075DDE3 /* LaunchBigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6B2C52049F7600075DDE3 /* LaunchBigCell.swift */; };
 		A3B0E7F5A519E9270902FA70 /* Localizable.strings in Sources */ = {isa = PBXBuildFile; fileRef = 086745A8E173ACF359E1850B /* Localizable.strings */; };
 		B106AE0B64AE5313D1EDC04C /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E4FE3E051201C4DB075B /* Storyboards.swift */; };
 		CB6C304CEEEE45D0A084354A /* Pods_DMSpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830384A0F42309A718A5BC8B /* Pods_DMSpaceX.framework */; };
@@ -82,6 +83,7 @@
 		9F7F0F0C2048870700FFF9BF /* launches.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = launches.json; sourceTree = "<group>"; };
 		9F7F0F0E204887AA00FFF9BF /* MockConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MockConfiguration.swift; sourceTree = "<group>"; };
 		9F7F0F102048899F00FFF9BF /* Launch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Launch.swift; sourceTree = "<group>"; };
+		9F8C7CDA204B238600386D10 /* LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewModel.swift; sourceTree = "<group>"; };
 		9FC357092048AC6000619092 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		9FC3570D2048BE0B00619092 /* SpaceXClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceXClient.swift; sourceTree = "<group>"; };
 		9FC3570F2048BE7200619092 /* SpaceXRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXRoute.swift; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 		9FD6B2BF2049E6AB0075DDE3 /* DateFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTest.swift; sourceTree = "<group>"; };
 		9FD6B2C12049EC3B0075DDE3 /* LauchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchesViewController.swift; sourceTree = "<group>"; };
 		9FD6B2C32049F5880075DDE3 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
-		9FD6B2C52049F7600075DDE3 /* LauchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchCell.swift; sourceTree = "<group>"; };
+		9FD6B2C52049F7600075DDE3 /* LaunchBigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchBigCell.swift; sourceTree = "<group>"; };
 		A5F2E4FE3E051201C4DB075B /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 1; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Storyboards.swift; sourceTree = "<group>"; };
 		AE5A7413963DE36537D8F762 /* AppTransportSecurity.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = AppTransportSecurity.plist; sourceTree = "<group>"; };
 		AFAEC2A6F2D42F17A6182D43 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 1; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				9FD6B2C32049F5880075DDE3 /* LaunchViewModel.swift */,
+				9F8C7CDA204B238600386D10 /* LaunchesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -319,7 +322,7 @@
 			children = (
 				15EF86E729C03AE4530C3885 /* Main.storyboard */,
 				9FD6B2C12049EC3B0075DDE3 /* LauchesViewController.swift */,
-				9FD6B2C52049F7600075DDE3 /* LauchCell.swift */,
+				9FD6B2C52049F7600075DDE3 /* LaunchBigCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -528,16 +531,22 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DMSpaceX/Pods-DMSpaceX-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/BouncyLayout/BouncyLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimatedCollectionViewLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BouncyLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,6 +590,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/BouncyLayout/BouncyLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -588,6 +599,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimatedCollectionViewLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BouncyLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -628,7 +641,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftgen >/dev/null; then\n  SRCDIR=\"$PROJECT_DIR/$PROJECT_NAME\"\n  swiftgen storyboards \"$SRCDIR\" -t swift3 --output \"$SRCDIR/Swiftgen/Storyboards.swift\"\n  swiftgen images \"$SRCDIR/Resources/Images.xcassets\"  -t swift3 --output \"$SRCDIR/Swiftgen/Images.swift\"\n  swiftgen strings \"$SRCDIR/Resources/Base.lproj/Localizable.strings\" -t swift3 --output \"$SRCDIR/Swiftgen/Strings.swift\"\n  swiftgen colors ~/Library/Colors/Material.clr -t swift3 --output \"$SRCDIR/Swiftgen/Colors.swift\"\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi";
+			shellScript = "if which swiftgen >/dev/null; then\n  SRCDIR=\"$PROJECT_DIR/$PROJECT_NAME\"\n  swiftgen storyboards \"$SRCDIR\" -t swift4 --output \"$SRCDIR/Swiftgen/Storyboards.swift\"\n  swiftgen xcassets \"$SRCDIR/Resources/Images.xcassets\"  -t swift4 --output \"$SRCDIR/Swiftgen/Images.swift\"\n  swiftgen strings \"$SRCDIR/Resources/Base.lproj/Localizable.strings\" -t flat-swift4 --output \"$SRCDIR/Swiftgen/Strings.swift\"\n  swiftgen colors ~/Library/Colors/Material.clr -t swift4 --output \"$SRCDIR/Swiftgen/Colors.swift\"\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi";
 		};
 		BFFA06C2F227F369410F93BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -672,7 +685,7 @@
 				E523308BDE339328344C9366 /* AppTransportSecurity.plist in Sources */,
 				F7EE4E1627048A8A72C06F79 /* AppDelegate.swift in Sources */,
 				9FC3570A2048AC6000619092 /* APIRequest.swift in Sources */,
-				9FD6B2C62049F7600075DDE3 /* LauchCell.swift in Sources */,
+				9FD6B2C62049F7600075DDE3 /* LaunchBigCell.swift in Sources */,
 				9FD6B2BC2049E3DF0075DDE3 /* DateFormatter+SpaceX.swift in Sources */,
 				9F1787152047F13800A2C7A0 /* APIConfiguration.swift in Sources */,
 				9FD6B2C42049F5880075DDE3 /* LaunchViewModel.swift in Sources */,
@@ -682,6 +695,7 @@
 				9F17870D20477ED400A2C7A0 /* APIClient.swift in Sources */,
 				54CCAD7A5AA0DABDD82408B6 /* Images.swift in Sources */,
 				876ACD4F7DFFA2A12062CCB0 /* Strings.swift in Sources */,
+				9F8C7CDB204B238600386D10 /* LaunchesViewModel.swift in Sources */,
 				1B0F6D746E5BACE712FA7314 /* Colors.swift in Sources */,
 				9FD6B2C22049EC3B0075DDE3 /* LauchesViewController.swift in Sources */,
 				9FC357102048BE7200619092 /* SpaceXRoute.swift in Sources */,

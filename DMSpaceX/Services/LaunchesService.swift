@@ -45,7 +45,7 @@ final class LaunchesService: APIService {
   ///
   /// - Returns: liste of launches
   func getLaunches() -> Observable<Results<Launch>> {
-    return Observable.create { [weak self] observer -> Disposable in
+   return Observable.create { [weak self] observer -> Disposable in
       let realm = try! Realm()
       let launches = realm.objects(Launch.self)
       self?.realmNotificationToken = launches.observe { realmCollectionChange in
