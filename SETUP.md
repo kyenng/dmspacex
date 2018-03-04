@@ -12,16 +12,3 @@
 * [ ] Ajouter les fichiers utiles type `README.md`, `Fastfile`, `colors.xml`… à la racine du workspace pour un accès rapide
 * [ ] Remplir les infos projet dans l'en-tête du `README.md`
 * [ ] Ajuster les environnements de WS dev/prod/…
-
-### Services tiers à configurer
-
-* [ ] Projet Jenkins CI
-* [ ] Projet Jenkins OTA
-  * Forcer temporairement le Bundle Identifier à `com.niji.DMSpaceX` et faites un *Run* en Release — pour forcer la build phase "Crashlytics" à s'exécuter avec le Bundle Identifier utilisé lors des livraison. Une fois l'application visible dans Fabric, remettez le BundleID à celui d'avant.
-* [ ] Ajuster au besoin la configuration Fastlane, entre autres les mails pour la tâches OTA (crashlytics) dans `fastlane/.env.default`
-* [ ] Configuration des `Environment` pour chaque environnement de WebServices
-* [ ] Mailing-List pour l'équipe projet
-* [ ] Mise en place de POEditor
-  * [ ] Modifier le script `scripts/poesie.sh` pour y indiquer le [token et projectID](https://poeditor.com/account/api) POEditor de votre projet
-* [ ] Mise en place d'un Modèle de Données commun `.xcdatamodel` avec `gyro`?
-* [ ] Ajouter branche `develop` pour GitFlow et verouiller la branche `master` sur GitLab

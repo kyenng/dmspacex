@@ -49,9 +49,6 @@ enum JSONKeys {
   * [Documentation officielle](https://realm.io/docs/swift/latest/)
   * [DejTech de présentation](https://intranet.niji.fr/index.php?option=com_content&view=article&id=777:dejtech-realm&catid=157:dej-tech)
   * Parsing des objets avec `Decodable` ou `JSONCodable`
-* Pattern Coordinator
-  * [Talk en video](https://vimeo.com/144116310)
-  * [Article de blog](http://khanlou.com/2015/10/coordinators-redux/)
 * Reusable
   * [Doc de la lib](https://github.com/AliSoftware/Reusable)
 
@@ -95,28 +92,13 @@ alors il vous faudra exécuter `bundle exec pod install` sur votre machine aussi
 Fastlane est utilisé pour automatiser les builds, tests et livraisons de ce projet (notamment via Jenkins)
 
 Pour lister les lanes disponibles, exécutez `bundle exec fastlane lanes`
-Pour exécuter une des lanes, utilisez `bundle exec fastlane [nom-de-la-lane]
+Pour exécuter une des lanes, utilisez `bundle exec fastlane [nom-de-la-lane]`
+
+La documentation sur les lanes disponibles du projet se trouve à dans le fichier `fastlane/README.md`
 
 ```sh
-bundle exec fastlane test
-bundle exec fastlane ota
+bundle exec fastlane ios local
 ```
-
-### Poesie & Gyro
-
-* [poesie](http://github.com/NijiDigital/poesie) est un outil Niji permettant d'extraire automatiquement les chaînes localisées rentrées dans un projet [POEditor](https://poeditor.com/projects/), pour générer les fichiers `Localizable.strings` et `Localizable.stringsdict` associés automatiquement.
-* [Gyro](http://github.com/NijiDigital/gyro) est un outil Niji permettant de générer les classes modèle pour Realm à partir d'un `xcdatamodel`, permettant ainsi de profiter de la commodité de l'éditeur graphique de modèle intégré à Xcode pour _designer_ le modèle Realm, et ce même si l'on utilise Realm au lieu de CoreData.
-
-Pour configurer ces outils pour votre projet:
-
-* Commencez par installer [Poesie](http://github.com/NijiDigital/poesie) et [Gyro](http://github.com/NijiDigital/gyro) sur votre machine si ce n'est pas déjà fait, typiquement via `gem install poesie gyro`
-* Clonez sur votre machine le repository GIT commun iOS/Android à votre projet, contenant notamment le xcdatamodel qui sera partagé par les 2 projets.
-* Adaptez les scripts `scripts/poesie.sh` et `scripts/gyro.sh` pour ajuster les variables `DATAMODEL_PATH`, `API_TOKEN`, `PROJECT_ID`
-
-Pour utiliser ces outils:
-
-* A chaque fois que de nouvelles chaînes ont été rentrées sur l'interface Web de POEditor, utilisez le script `scripts/poesie.sh` pour regénérer les fichiers `Localizable.strings` et `Localizable.stringsdict`.
-* De même, à chaque fois que le xcdatamodel commun à iOS et Android est modifié, regénérez les classes Realm à l'aide du script `scripts/gyro.sh`.
 
 ### SwiftGen
 

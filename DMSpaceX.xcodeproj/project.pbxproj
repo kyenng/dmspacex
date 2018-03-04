@@ -11,7 +11,6 @@
 		04BF3F134F5AE9FBDB2BCE84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15EF86E729C03AE4530C3885 /* Main.storyboard */; };
 		1B0F6D746E5BACE712FA7314 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E76B46F8625C2B6C35908 /* Colors.swift */; };
 		1DE614491723FAD55DE57AD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 670987A66ADBC723F0B57FDB /* Foundation.framework */; };
-		21749A5FB2DA2C29C122B506 /* AppTransportSecurity.plist in Sources */ = {isa = PBXBuildFile; fileRef = AE5A7413963DE36537D8F762 /* AppTransportSecurity.plist */; };
 		36A88622A8A00F495BB90160 /* LaunchesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9845ABA38A9052D19083DE /* LaunchesServiceTests.swift */; };
 		54CCAD7A5AA0DABDD82408B6 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579BD40B70B1F3742ED71619 /* Images.swift */; };
 		876ACD4F7DFFA2A12062CCB0 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2197C4DEFD330ECB5FC23CB8 /* Strings.swift */; };
@@ -38,9 +37,7 @@
 		B106AE0B64AE5313D1EDC04C /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E4FE3E051201C4DB075B /* Storyboards.swift */; };
 		CB6C304CEEEE45D0A084354A /* Pods_DMSpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830384A0F42309A718A5BC8B /* Pods_DMSpaceX.framework */; };
 		D1BEAC3833D383900B3F17DF /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D13A26D858F9A8B53FAD47 /* Pods_UnitTests.framework */; };
-		E523308BDE339328344C9366 /* AppTransportSecurity.plist in Sources */ = {isa = PBXBuildFile; fileRef = 13EBE3464EE30E7EA4AC9D96 /* AppTransportSecurity.plist */; };
 		E75D71F08F491CD5647BD6FC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78DD28AE5006487FCDF599B8 /* LaunchScreen.xib */; };
-		F573B0CC1312D1CCA82C10B2 /* AppTransportSecurity.plist in Sources */ = {isa = PBXBuildFile; fileRef = 19BB2E8063E83732376D1877 /* AppTransportSecurity.plist */; };
 		F63803489E005BBEE5B03B4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5ECDA1C6974EA2139C360AD /* Images.xcassets */; };
 		F7EE4E1627048A8A72C06F79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAEC2A6F2D42F17A6182D43 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -589,7 +586,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -z \"${APP_ENVIRONMENT}\" ]; then\n\techo \"Select Environment Build Phase:0: warning: No APP_ENVIRONMENT variable set, the default app environment was unchanged.\"\nelse\n\techo \"Switching to environment '${APP_ENVIRONMENT}'...\"\n\t# Copy Enviroment.swift file\n\tcp \"${PROJECT_DIR}/Environments/${APP_ENVIRONMENT}/Environment.swift\" \"${PROJECT_DIR}/Environments/default/Environment.swift\"\n\t# Replace NSAppTransportSecurity entry\n\t/usr/libexec/PlistBuddy -c 'Delete :NSAppTransportSecurity' \"${INFOPLIST_FILE}\"\n\tatsPlist=\"AppTransportSecurity.plist\"\n\tif [ -f \"${PROJECT_DIR}/Environments/${APP_ENVIRONMENT}/${atsPlist}\" ]; then\n\t\t/usr/libexec/PlistBuddy -c \"Merge '${PROJECT_DIR}/Environments/${APP_ENVIRONMENT}/${atsPlist}'\" \"${INFOPLIST_FILE}\"\n\tfi\nfi\n";
+			shellScript = "if [ -z \"${APP_ENVIRONMENT}\" ]; then\n\techo \"Select Environment Build Phase:0: warning: No APP_ENVIRONMENT variable set, the default app environment was unchanged.\"\nelse\n\techo \"Switching to environment '${APP_ENVIRONMENT}'...\"\n\t# Copy Enviroment.swift file\n\tcp \"${PROJECT_DIR}/Environments/${APP_ENVIRONMENT}/Environment.swift\" \"${PROJECT_DIR}/Environments/default/Environment.swift\"\n\t# Replace NSAppTransportSecurity entry\n    /usr/libexec/PlistBuddy -c 'Delete :NSAppTransportSecurity' \"${INFOPLIST_FILE}\"\n\tatsPlist=\"AppTransportSecurity.plist\"\n\tif [ -f \"${PROJECT_DIR}/Environments/${APP_ENVIRONMENT}/${atsPlist}\" ]; then\n\t\t/usr/libexec/PlistBuddy -c \"Merge '${PROJECT_DIR}/Environments/${APP_ENVIRONMENT}/${atsPlist}'\" \"${INFOPLIST_FILE}\"\n\tfi\nfi\n";
 		};
 		9E30E87DEAF06F203823E213 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -688,11 +685,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F573B0CC1312D1CCA82C10B2 /* AppTransportSecurity.plist in Sources */,
-				21749A5FB2DA2C29C122B506 /* AppTransportSecurity.plist in Sources */,
 				9F1787102047EF8500A2C7A0 /* APIService.swift in Sources */,
 				016ABB8E0B90B85404CE086B /* Environment.swift in Sources */,
-				E523308BDE339328344C9366 /* AppTransportSecurity.plist in Sources */,
 				F7EE4E1627048A8A72C06F79 /* AppDelegate.swift in Sources */,
 				9FC3570A2048AC6000619092 /* APIRequest.swift in Sources */,
 				9FD6B2C62049F7600075DDE3 /* LaunchCell.swift in Sources */,
