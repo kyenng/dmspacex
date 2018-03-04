@@ -33,16 +33,16 @@ PODS:
   - YouTubePlayer (0.4.0)
 
 DEPENDENCIES:
-  - AnimatedCollectionViewLayout
-  - BouncyLayout
-  - Crashlytics
-  - Fabric
-  - OHHTTPStubs/Swift
-  - RealmSwift
-  - Reusable
-  - RxCocoa
-  - RxSwift
-  - YouTubePlayer
+  - AnimatedCollectionViewLayout (~> 0.3.0)
+  - BouncyLayout (~> 2.0.0)
+  - Crashlytics (~> 3.10.1)
+  - Fabric (~> 1.7.5)
+  - OHHTTPStubs/Swift (~> 6.1.0)
+  - RealmSwift (~> 3.1.1)
+  - Reusable (~> 4.0.0)
+  - RxCocoa (~> 4.1.2)
+  - RxSwift (~> 4.1.2)
+  - YouTubePlayer (~> 0.4.0)
 
 SPEC CHECKSUMS:
   AnimatedCollectionViewLayout: 504b992a4258eb39d2dd2b2b48e84b4b95860fd7
@@ -57,6 +57,6 @@ SPEC CHECKSUMS:
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: f178ff1b2896cb81a7d9872a9170f614d8ed40b8
+PODFILE CHECKSUM: 59504fbf490aa315b05b878488e4ea52554ee39e
 
 COCOAPODS: 1.4.0
