@@ -2,7 +2,7 @@
 //  LaunchesServiceTest.swift
 //  DMSpaceX
 //
-//  Created by Kien NGUYEN on 26/2/18
+//  Created by Kyen NG on 26/2/18
 //  Copyright (c) 2018 kien.ng@icloud.com. All rights reserved.
 //
 
@@ -25,6 +25,13 @@ final class LaunchesServiceTest: XCTestCase {
   // MARK: Test Setup & Teardown
   override func setUp() {
     super.setUp()
+    
+    // reset database
+    let realm = try! Realm()
+    try! realm.write {
+      realm.deleteAll()
+    }
+    
     // stubbing ws call
     stub(condition: { request -> Bool in
       return request.url?.absoluteString.range(of: SpaceXRoute.launches.path) != nil
@@ -35,11 +42,8 @@ final class LaunchesServiceTest: XCTestCase {
   }
   
   override func tearDown() {
+    // reset stubs
     OHHTTPStubs.removeAllStubs()
-    let realm = try! Realm()
-    try! realm.write {
-      realm.deleteAll()
-    }
     super.tearDown()
   }
   

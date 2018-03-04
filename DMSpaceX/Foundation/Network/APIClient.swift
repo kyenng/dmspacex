@@ -2,7 +2,7 @@
 //  APIClient.swift
 //  DMSpaceX
 //
-//  Created by Kien NGUYEN on 01/03/2018.
+//  Created by Kyen NG on 01/03/2018.
 //  Copyright © 2018 kien.ng@icloud.com. All rights reserved.
 //
 
@@ -23,10 +23,8 @@ public extension APIClient {
       let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
         do {
           let model: T = try JSONDecoder().decode(T.self, from: data ?? Data())
-          print("== Success to request: \(request.url?.absoluteString ?? "no url") ==\nData:\n\(model)")
           single(.success(model))
         } catch let error {
-          print("== Error to request: \(request.url?.absoluteString ?? "no url") ==\nError: \(error)")
           single(.error(error))
         }
       }

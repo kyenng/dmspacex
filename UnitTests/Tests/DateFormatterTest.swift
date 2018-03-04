@@ -2,7 +2,7 @@
 //  DateFormatterTest.swift
 //  UnitTests
 //
-//  Created by Kyen on 02/03/2018.
+//  Created by Kyen NG on 02/03/2018.
 //  Copyright © 2018 kien.ng@icloud.com. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ class DateFormatterTest: XCTestCase {
       XCTAssertNotNil(date)
       
       let string = DateFormatter(dateFormat: DateFormatter.fullDateFormat).string(from: date!)
-      XCTAssert(string == "Saturday 02 August 2008 at 03h34")
+      XCTAssert(string == "Sat 02 Aug 2008 at 03h34")
     }
   
     
