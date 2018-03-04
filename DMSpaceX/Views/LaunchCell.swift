@@ -48,7 +48,6 @@ class LaunchCell: UICollectionViewCell, Reusable {
       .disposed(by: disposeBag)
     
     Observable.combineLatest(viewModel.isDetailDisplay.asObservable(), viewModel.urlToPlay.asObservable())
-      .debug("play video")
       .subscribe(onNext: { [weak self] isDetailDisplay, urlToPlay in
         guard isDetailDisplay,
           let videoLink = urlToPlay else { return }

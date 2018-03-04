@@ -18,19 +18,22 @@ final class LaunchesViewModel {
   private let disposeBag = DisposeBag()
   private let service = LaunchesService(apiClient: SpaceXClient(configuration: Environment()))
   
-  func updateData(completion: (() -> Void)?) {
+  func refresh() {
     service.fetchLaunches(shouldSave: true)
       .subscribe()
       .disposed(by: disposeBag)
-    
+  }
+  
+  func updateData(completion: (() -> Void)?) {
     service.getLaunches()
       .observeOn(MainScheduler.instance)
       .subscribe(onNext: { [weak self] launches in
         self?.updateData(with: launches)
         completion?()
-        
       })
       .disposed(by: disposeBag)
+    
+    refresh()
   }
   
   func toggleDetailDisplay() -> Bool {

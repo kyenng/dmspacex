@@ -10,8 +10,6 @@ import UIKit
 import BouncyLayout
 import AnimatedCollectionViewLayout
 import YouTubePlayer
-import RxCocoa
-import RxSwift
 
 class LauchesViewController: UIViewController {
   
@@ -19,6 +17,7 @@ class LauchesViewController: UIViewController {
   // MARK: IBOutlet
   @IBOutlet fileprivate weak var collectionView: UICollectionView!
   
+  static let player = YouTubePlayerView()
   // MARK: Private
 
   fileprivate var viewModel = LaunchesViewModel()
@@ -28,8 +27,7 @@ class LauchesViewController: UIViewController {
   fileprivate var cellSizeDetail: CGSize!
   fileprivate var cellSizeList: CGSize!
   
-  static let player = YouTubePlayerView()
-  
+  private let refreshControl = UIRefreshControl()
   // MARK: - Function
   
   // MARK: UIViewController life cycle
@@ -54,6 +52,7 @@ class LauchesViewController: UIViewController {
     // update data from ws and realm
     viewModel.updateData { [weak self] in
       self?.collectionView.reloadData()
+      self?.refreshControl.endRefreshing()
     }
     
     // setup video player
@@ -62,10 +61,21 @@ class LauchesViewController: UIViewController {
     LauchesViewController.player.playerVars = ["playsinline": "1" as AnyObject,
                                                "modestbranding": "1" as AnyObject,
                                                "showinfo": "0" as AnyObject]
+    
+    // setup pull to refresh
+    refreshControl.tintColor = .gray
+    collectionView.addSubview(refreshControl)
+    collectionView.alwaysBounceVertical = true
+    refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
   }
   
   override var prefersStatusBarHidden: Bool {
     return true
+  }
+  
+  // MARK: Private
+  @objc private func refresh() {
+    viewModel.refresh()
   }
 }
 
