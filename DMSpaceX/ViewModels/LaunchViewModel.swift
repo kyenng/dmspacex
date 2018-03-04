@@ -25,7 +25,7 @@ final class LaunchViewModel {
   private let disposeBag = DisposeBag()
   private let model: Launch
   
-  init(model: Launch, isDetailDisplay: BehaviorRelay<Bool>?) {
+  init(model: Launch, isDetailDisplay: BehaviorRelay<Bool>) {
     self.model = model
     flightNumber = "\(model.flightNumber)"
     rocketName = model.rocket.rocketName
@@ -36,11 +36,11 @@ final class LaunchViewModel {
       videoLink = nil
     }
     
-    isDetailDisplay?
+    isDetailDisplay
       .bind(to: self.isDetailDisplay)
       .disposed(by: disposeBag)
     
-    isDetailDisplay?
+    isDetailDisplay
       .map { [weak self] isDetail -> String? in
         guard let date = self?.model.launchDate else { return nil }
         return isDetail

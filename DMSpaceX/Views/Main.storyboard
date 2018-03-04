@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JLi-PD-SkI">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -28,11 +28,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Gxy-sB-QtO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jg8-Nc-7jd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="55f-8k-iSI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G33-Xv-dPp" customClass="BouncyLayout" customModule="BouncyLayout">
                                     <size key="itemSize" width="300" height="593"/>
@@ -42,15 +42,15 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LaunchCell" id="l6K-b2-mK8" customClass="LaunchCell" customModule="DMSpaceX" customModuleProvider="target">
-                                        <rect key="frame" x="37.666666666666664" y="0.0" width="300" height="593"/>
+                                        <rect key="frame" x="37.5" y="0.0" width="300" height="593"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="593"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="Meg-ah-q3E">
-                                                    <rect key="frame" x="11" y="0.0" width="289" height="130"/>
-                                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="100"/>
+                                                    <rect key="frame" x="208" y="554" width="87" height="39"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
                                                     <color key="textColor" red="0.051960200069999997" green="0.19789251690000001" blue="0.56280845400000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="1" height="0.0"/>
@@ -62,7 +62,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSl-zc-BU3">
-                                                    <rect key="frame" x="138" y="569" width="24.666666666666657" height="14"/>
+                                                    <rect key="frame" x="138" y="569" width="24.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="10"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -75,19 +75,18 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="249" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W0C-Xg-8kb">
-                                                    <rect key="frame" x="20" y="525" width="260" height="19.666666666666629"/>
+                                                    <rect key="frame" x="20" y="525" width="260" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.076260156930000003" green="0.30648756030000002" blue="0.69954341649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.074509803921568626" green="0.30588235294117649" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="GKA-wf-fMd" firstAttribute="top" secondItem="l6K-b2-mK8" secondAttribute="top" priority="750" constant="40" id="0Hy-hB-M5B"/>
                                             <constraint firstItem="R8s-6K-g67" firstAttribute="leading" secondItem="l6K-b2-mK8" secondAttribute="leading" id="3IW-6B-8pf"/>
-                                            <constraint firstItem="Meg-ah-q3E" firstAttribute="top" secondItem="l6K-b2-mK8" secondAttribute="top" id="3iy-Ap-4Og"/>
                                             <constraint firstAttribute="trailing" secondItem="R8s-6K-g67" secondAttribute="trailing" id="5IG-Uw-YHt"/>
                                             <constraint firstItem="nSl-zc-BU3" firstAttribute="centerX" secondItem="l6K-b2-mK8" secondAttribute="centerX" id="5zx-6G-ewY"/>
                                             <constraint firstAttribute="trailing" secondItem="W0C-Xg-8kb" secondAttribute="trailing" constant="20" id="Gfq-rH-Wuu"/>
@@ -99,7 +98,8 @@
                                             <constraint firstItem="Meg-ah-q3E" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="l6K-b2-mK8" secondAttribute="leading" id="erh-dy-J47"/>
                                             <constraint firstItem="GKA-wf-fMd" firstAttribute="centerY" secondItem="l6K-b2-mK8" secondAttribute="centerY" priority="751" id="feZ-xa-YMe"/>
                                             <constraint firstItem="nSl-zc-BU3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="W0C-Xg-8kb" secondAttribute="bottom" priority="250" constant="10" id="jC3-tf-jNW"/>
-                                            <constraint firstAttribute="trailing" secondItem="Meg-ah-q3E" secondAttribute="trailing" id="rPS-d3-ANE"/>
+                                            <constraint firstAttribute="bottom" secondItem="Meg-ah-q3E" secondAttribute="bottom" id="mVt-7R-GbF"/>
+                                            <constraint firstAttribute="trailing" secondItem="Meg-ah-q3E" secondAttribute="trailing" constant="5" id="rPS-d3-ANE"/>
                                             <constraint firstAttribute="trailing" secondItem="GKA-wf-fMd" secondAttribute="trailing" constant="20" id="sK4-cL-mGm"/>
                                         </constraints>
                                         <connections>

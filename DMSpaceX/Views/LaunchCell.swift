@@ -43,6 +43,7 @@ class LaunchCell: UICollectionViewCell, Reusable {
         } else {
           self?.videoContainerView.isHidden = true
           self?.detailsLabel.isHidden = true
+          LauchesViewController.player.stop()
         }
       })
       .disposed(by: disposeBag)
