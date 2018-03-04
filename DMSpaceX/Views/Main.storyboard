@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JLi-PD-SkI">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JLi-PD-SkI">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
-            <string>Avenir-Light</string>
             <string>Avenir-Medium</string>
         </array>
         <array key="Futura.ttc">
@@ -24,13 +22,17 @@
         <!--Lauches View Controller-->
         <scene sceneID="eZh-oX-aDO">
             <objects>
-                <viewController id="JLi-PD-SkI" customClass="LauchesViewController" customModule="DMSpaceX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="JLi-PD-SkI" customClass="LauchesViewController" customModule="DMSpaceX" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HNY-jN-KSm"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gxy-sB-QtO"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jg8-Nc-7jd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="55f-8k-iSI">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G33-Xv-dPp" customClass="BouncyLayout" customModule="BouncyLayout">
                                     <size key="itemSize" width="300" height="593"/>
@@ -40,7 +42,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LaunchCell" id="l6K-b2-mK8" customClass="LaunchCell" customModule="DMSpaceX" customModuleProvider="target">
-                                        <rect key="frame" x="37.5" y="0.0" width="300" height="593"/>
+                                        <rect key="frame" x="37.666666666666664" y="0.0" width="300" height="593"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="593"/>
@@ -60,8 +62,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSl-zc-BU3">
-                                                    <rect key="frame" x="138.5" y="569" width="24.5" height="14"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
+                                                    <rect key="frame" x="138" y="569" width="24.666666666666657" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="10"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -73,8 +75,8 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="249" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W0C-Xg-8kb">
-                                                    <rect key="frame" x="20" y="525" width="260" height="16.5"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
+                                                    <rect key="frame" x="20" y="525" width="260" height="19.666666666666629"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -118,13 +120,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.6306197643" green="0.69167852399999996" blue="0.7232108116" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="55f-8k-iSI" firstAttribute="top" secondItem="waM-3j-Cry" secondAttribute="top" id="5co-tE-bUm"/>
-                            <constraint firstItem="55f-8k-iSI" firstAttribute="leading" secondItem="waM-3j-Cry" secondAttribute="leading" id="6OL-yb-4DH"/>
-                            <constraint firstItem="waM-3j-Cry" firstAttribute="trailing" secondItem="55f-8k-iSI" secondAttribute="trailing" id="8Iu-RI-c0S"/>
-                            <constraint firstItem="waM-3j-Cry" firstAttribute="bottom" secondItem="55f-8k-iSI" secondAttribute="bottom" id="S4q-bB-q5I"/>
+                            <constraint firstItem="55f-8k-iSI" firstAttribute="top" secondItem="jg8-Nc-7jd" secondAttribute="top" id="5co-tE-bUm"/>
+                            <constraint firstItem="55f-8k-iSI" firstAttribute="leading" secondItem="jg8-Nc-7jd" secondAttribute="leading" id="6OL-yb-4DH"/>
+                            <constraint firstAttribute="trailing" secondItem="55f-8k-iSI" secondAttribute="trailing" id="8Iu-RI-c0S"/>
+                            <constraint firstAttribute="bottom" secondItem="55f-8k-iSI" secondAttribute="bottom" id="dnR-Oh-wBZ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="waM-3j-Cry"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="collectionView" destination="55f-8k-iSI" id="REj-mk-D7T"/>
                     </connections>
