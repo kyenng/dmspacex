@@ -11,41 +11,18 @@ default_platform :ios
 
 platform :ios do
   before_all do
-    xcversion(version: '~> 8.0')
+    xcversion(version: '~> 9.0')
     unlock_keychain(path: 'login.keychain') if is_ci
-
-    SLACK_URL = "https://hooks.slack.com/services/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"
     SLATHER_IGNORES = %w(../* */AppDelegate.swift */Constants/* */Coordinators/*).freeze
     XCARGS = "APP_ENVIRONMENT=#{ENV['APP_ENVIRONMENT']}"
   end
   
-  desc "Runs all the tests and generate JUnit report"
-  lane :test do
+  desc "Run the tests and generate HTML coverage reports"
+  lane :test_report do
     scan(
       scheme: ENV['SCHEME'],
       xcargs: XCARGS,
-      output_directory: './Reports',
-      output_types: "junit",
-      code_coverage:true
-    )
-    slather(
-      workspace: ENV['XCWORKSPACE'],
-      proj: ENV['XCPROJECT'],
-      scheme: ENV['SCHEME'],
-      ignore: SLATHER_IGNORES,
-      jenkins: true,
-      source_directory: 'DMSpaceX',
-      output_directory: './Reports',
-      cobertura_xml: true
-    )
-  end
-  
-  desc "Run the tests and generate HTML coverage report"
-  lane :local do
-    scan(
-      scheme: ENV['SCHEME'],
-      xcargs: XCARGS,
-      output_directory: './Reports/',
+      output_directory: './Reports/TU',
       output_types: "html",
       open_report: true,
       code_coverage:true
@@ -56,7 +33,7 @@ platform :ios do
       scheme: ENV['SCHEME'],
       ignore: SLATHER_IGNORES,
       source_directory: 'DMSpaceX',
-      output_directory: './Reports',
+      output_directory: './Reports/Coverage',
       html: true,
       show: true
     )
@@ -68,121 +45,6 @@ platform :ios do
       scheme: ENV['SCHEME'],
       xcargs: XCARGS,
     )
-  end
-  
-  lane :badge_icon do
-    # Reset the icon
-    Dir['../**/*.appiconset'].each do |path|
-      puts %Q(Reverting: git checkout -- "#{path}")
-      `git checkout -- "#{path}"`
-    end
-    # Add badge only if env var is set in .env.xxx`
-    if ENV['ADD_ICON_BADGE'].to_i > 0
-      unless `brew ls --versions imagemagick` && $?.success?
-        UI.error "You must install ImageMagick in order for the badge to be added on the icon."
-        UI.important "To install ImageMagick, run:"
-        UI.command "brew install imagemagick"
-        exit 1
-      end
-
-      UI.message "Extracting Version & Build number…"
-      settings = `xcodebuild -workspace ../#{ENV['XCWORKSPACE']} -scheme #{ENV['SCHEME']} -showBuildSettings`
-      app_version = settings.match(%r/GLOBAL_APP_VERSION = (.*)/)[1]
-      build_version = settings.match(%r/GLOBAL_APP_BUILD_VERSION = (.*)/)[1]
-    
-      badge(
-        shield: "#{app_version}%20(#{build_version})-#{ENV['APP_ENVIRONMENT']}-blue",
-        shield_gravity: 'SouthEast',
-        no_badge: true # Remove default "Beta" banner
-      )
-    end
-  end
-
-  desc "Build and distribute OTA to Crashlytics Beta (Fabric)"
-  lane :ota do
-    # If you use a CHANGELOG file, uncomment this and use `notes_path` instead of `notes` in crashlytics action
-    # generate_release_notes
-    badge_icon
-    gym(
-      scheme: ENV['SCHEME'],
-      sdk: 'iphoneos',
-      clean: true,
-      output_directory: "./build",
-      output_name: "#{ENV['APP_NAME']}.ipa",
-      xcargs: XCARGS + " APP_BUNDLE_IDENTIFIER=#{ENV['APP_BUNDLE_IDENTIFIER']}",
-      export_team_id: ENV['TEAM_ID'],
-      codesigning_identity: ENV['CODESIGNING_IDENTITY'],
-      export_method: 'enterprise'
-    )
-    crashlytics(
-      # notes_path: 'fastlane/ReleaseNotes.txt',
-      notes: "Environnement: #{ENV['APP_ENVIRONMENT']}"
-    )
-    #slack(
-    #  slack_url: SLACK_URL,
-    #  message: "Nouvelle livraison DMSpaceX disponible sur Fabric",
-    #  channel: "#DMSpaceX",
-    #  payload: {
-    #      'Environment' => ENV['APP_ENVIRONMENT'],
-    #  },
-    #  default_payloads: [:git_branch]
-    #)
-  end
-
-  desc "Submit a new Beta Build to Apple TestFlight"
-  desc "This will also make sure the profile is up to date"
-  lane :beta do
-    # match(type: "appstore") # more information: https://codesigning.guide
-    # TODO: Adjust the export_team_id and codesigning_identity as needed
-    #       Typically use the customer's Apple team instead of Niji's here
-    gym(
-      scheme: ENV['SCHEME'],
-      sdk: 'iphoneos',
-      clean: true,
-      output_directory: "./build",
-      output_name: "#{ENV['APP_NAME']}.ipa",
-      xcargs: XCARGS + " APP_BUNDLE_IDENTIFIER=#{ENV['APP_BUNDLE_IDENTIFIER']}",
-      export_team_id: ENV['TEAM_ID'],
-      codesigning_identity: ENV['CODESIGNING_IDENTITY'],
-      export_method: 'enterprise'
-    )
-    ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
-    pilot(
-      skip_submission: true,
-      skip_waiting_for_build_processing: true
-    )
-    #slack(
-    #  slack_url: SLACK_URL,
-    #  message: "Nouvelle livraison DMSpaceX disponible sur TestFlight",
-    #  channel: "#DMSpaceX",
-    #  payload: {
-    #    'Environment' => ENV['APP_ENVIRONMENT'],
-    #  },
-    #  default_payloads: [:git_branch]
-    #)
-  end
-
-  desc "Upload dSYM files to Crashlytics"
-  lane :refresh_dsyms do
-    download_dsyms                  # Download dSYM files from iTC
-    upload_symbols_to_crashlytics   # Upload them to Crashlytics
-    clean_build_artifacts           # Delete the local dSYM files
-  end
-
-  desc "Generate the Release Notes to attach to the Fabric build from the CHANGELOG.md"
-  lane :generate_release_notes do
-    # Check for invalid titles in CHANGELOG
-    invalid_lines = `grep -Ev '^## ?Version ' ../CHANGELOG.md | grep -E '^##[^#]|#*Version'`
-    if $?.success?
-      UI.error "Found invalid section titles in CHANGELOG file: Please respect the `## Version XX` format for all 2nd-level titles\n#{invalid_lines}"
-      exit 1
-    end
-    # Generate truncated Release notes only for the first version paragraph in the file
-    changelog = `sed -n '/^## Version/,/^## Version/ { /^## Version/{x;/^$/!q;g;};p; }' ../CHANGELOG.md`
-    open('ReleaseNotes.txt', 'w') do |f|
-      f.puts "Environnement WebServices: #{ENV['APP_ENVIRONMENT'] || '_inconnu_'}\n\n"
-      f.puts changelog
-    end
   end
 end
 

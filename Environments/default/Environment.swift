@@ -2,16 +2,11 @@
 //  Environment.swift
 //  DMSpaceX
 //
-//  Created by Kien NGUYEN on 26/2/18
-//  Copyright (c) 2018 kien.ng. All rights reserved.
+//  Created by Kyen NG on 26/2/18
+//  Copyright (c) 2018 kien.ng@icloud.com. All rights reserved.
 //
 
-import Foundation
-
-// TODO: 📝 Add various app-wide constants here
-
-enum Environment {
-  static let baseURL = "https://api.DMSpaceX.com"
-  static let apiVersion = "/api/v1"
-  // ...
+struct Environment: APIConfiguration {
+  let baseURL = "https://api.spacexdata.com/"
+  let apiVersion = "v2/"
 }
