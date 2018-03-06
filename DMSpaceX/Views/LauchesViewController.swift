@@ -63,7 +63,7 @@ class LauchesViewController: UIViewController {
                                                "showinfo": "0" as AnyObject]
     
     // setup pull to refresh
-    refreshControl.tintColor = .gray
+    refreshControl.tintColor = .white
     collectionView.addSubview(refreshControl)
     collectionView.alwaysBounceVertical = true
     refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
