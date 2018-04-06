@@ -42,7 +42,7 @@ final class LaunchesViewModel {
   }
 
   private func updateData(with launches: Results<Launch>) {
-    dataSource = launches.map { launch in
+    dataSource = launches.lazy.map { launch in
       let cellVM = LaunchViewModel(model: launch, isDetailDisplay: isDetailDisplay)
       return cellVM
     }

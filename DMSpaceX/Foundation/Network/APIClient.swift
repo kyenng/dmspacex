@@ -20,7 +20,7 @@ public extension APIClient {
     
     return Single<T>.create { single in
       let request = apiRequest.request(with: url)
-      let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
+      let task = URLSession.shared.dataTask(with: request) { data, _, error in
         do {
           let model: T = try JSONDecoder().decode(T.self, from: data ?? Data())
           single(.success(model))

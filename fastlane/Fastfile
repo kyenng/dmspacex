@@ -12,7 +12,7 @@ default_platform :ios
 platform :ios do
   before_all do
     xcversion(version: '~> 9.0')
-    unlock_keychain(path: 'login.keychain') if is_ci
+    #unlock_keychain(path: 'login.keychain') if is_ci
     SLATHER_IGNORES = %w(../* */AppDelegate.swift */Constants/* */Coordinators/*).freeze
     XCARGS = "APP_ENVIRONMENT=#{ENV['APP_ENVIRONMENT']}"
   end
